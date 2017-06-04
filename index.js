@@ -3,8 +3,8 @@ var AWS = require('aws-sdk');
 var phantomjs = require('phantomjs-prebuilt');
 
 exports.handler = function(event, context, callback) {
-    console.log('I am on master');
-    var phantom = phantomjs.exec('phantomjs-script.js', 'arg1', 'arg2');
+    
+    var phantom = phantomjs.exec('phantomjs-script.js', 'https://www.adidas.com/us/pureboost-shoes/CG2986.html', 'arg2');
 
     phantom.stdout.on('data', function(buf) {
         console.log('[STR] stdout "%s"', String(buf));
