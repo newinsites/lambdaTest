@@ -4,6 +4,7 @@ var phantomjs = require('phantomjs-prebuilt');
 
 exports.handler = function(event, context, callback) {
     
+    var result = '';
     var phantom = phantomjs.exec('phantomjs-script.js', 'https://www.adidas.com/us/pureboost-shoes/CG2986.html', 'arg2');
 
     phantom.stdout.on('data', function(buf) {
@@ -17,7 +18,7 @@ exports.handler = function(event, context, callback) {
     });
 
     phantom.on('exit', code => {
-        callback(null, 'fin!!');
+        callback(null, result);
     });
 
 };

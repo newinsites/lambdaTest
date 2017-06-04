@@ -16,6 +16,7 @@ page.open(address, function(status) {
     t = Date.now() - t;
     console.log('Loading ' + system.args[1]);
     console.log('Loading time ' + t + ' msec');
+    result = {time: t + ' msec'};
   }
   phantom.exit();
 });
